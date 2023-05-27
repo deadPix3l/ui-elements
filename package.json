@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "lit": "^2.0.2",
+    "lit-html": "^2.7.4",
+    "lit-toast": "^1.5.1",
     "x-flexbox": "^1.1.1"
   },
   "devDependencies": {
