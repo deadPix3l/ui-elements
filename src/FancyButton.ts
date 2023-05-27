@@ -5,8 +5,10 @@ import { property, customElement} from 'lit/decorators.js';
 
 @customElement('fancy-button')
 class FancyButton extends LitElement {
+
   static styles = css`
     .btn {
+      flex-grow: 1;
       margin: 0;
       padding: 1em;
       text-align: center;
@@ -14,7 +16,6 @@ class FancyButton extends LitElement {
       transition: 0.5s;
       background-size: 200% auto;
       color: black;
-      flex-grow: 1;
       border-radius: 10px;
       --color-a: #84fab0;
       --color-b: #8fd3f4;
@@ -35,9 +36,10 @@ class FancyButton extends LitElement {
 
     slot { user-select: none;}
   `;
+
   render() {
     return html`
-            <a class="btn" part="button">
+          <a class="btn" part="button" >
             <slot>Example Text</slot>
           </a>
           `;
