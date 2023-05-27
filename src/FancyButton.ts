@@ -10,7 +10,8 @@ class FancyButton extends LitElement {
     .btn {
       flex-grow: 1;
       margin: 0;
-      padding: 1em;
+      padding: 0.25em;
+      cursor: pointer;
       text-align: center;
       //text-transform: uppercase;
       transition: 0.5s;
@@ -25,7 +26,6 @@ class FancyButton extends LitElement {
     .btn:hover {
       background-position: right center; /* change the direction of the change here */
       transform: scale(1.05, 1.05);
-      font-weight: bold;
     }
     .btn:active {
       filter: brightness(50%);
