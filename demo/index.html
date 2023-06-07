@@ -3,9 +3,19 @@
 <head>
     <script type="module" src="../dist/src/FancyButton.js"></script>
     <script type="module" src="../dist/src/ContentNode.js"></script>
+    <script type="module" src="../dist/src/YamlField.js"></script>
+    <script type="module" src="../dist/src/IconButton.js"></script>
     <script type="module" src="../node_modules/lit-toast/lit-toast.js"></script>
 
     <style>
+
+        .gridcontainer {
+            display: grid;
+            grid-template-areas:
+                "buttons buttons"
+                "yaml content";
+            gap: 1em;
+        }
 
         fancy-button {
             display: flex !important;
@@ -19,7 +29,14 @@
             column-gap: 1em;
             align-items: stretch;
             align-content: space-between;
+            align-self: stretch;
         }
+
+        .buttons { grid-area: buttons; }
+        yaml-field {
+            grid-area: yaml;
+        }
+        .column { grid-area: content; }
 
         .column {
             flex-flow: column nowrap;
@@ -61,14 +78,15 @@ function _showToast(msg) {
 </head>
 <body>
     <h1> Fancy Buttons!</h1>
-    <div class="container">
+    <div class="gridcontainer">
+    <div class="container buttons">
         <fancy-button class="btn-1" onclick="{_showToast('TOAST!')}">Click for toast</fancy-button>
         <fancy-button class="btn-2" >2</fancy-button>
         <fancy-button>SAVE</fancy-button>
         <fancy-button class="btn-4">commit</fancy-button>
         <fancy-button class="btn-5"></fancy-button>
     </div>
-    <h1>Editable bubbles!</h1>
+    <yaml-field></yaml-field>
     <div class="container column" id="contentflex">
     <content-node tool="something" content="a basic string"></content-node>
     <content-node tool="another" content="Hey look, some text!"></content-node>
@@ -78,6 +96,10 @@ function _showToast(msg) {
       be
         multiline and indent
     support"></content-node>
+    </div>
+
+    <icon-button></icon-button>
+
     </div>
 
     <lit-toast></lit-toast>
